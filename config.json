@@ -1,0 +1,15 @@
+{
+  "site": "trip",
+  "entry_url": "https://www.trip.com/flights/",
+  "service_url": "http://127.0.0.1:8790",
+  "qwen_url": "http://127.0.0.1:8792",
+  "laya_url": "http://127.0.0.1:8791",
+  "max_actions": 40,
+  "timeout_seconds": 600,
+  "model_startup_timeout_seconds": 600,
+  "timezone": "Asia/Shanghai",
+  "mtp": true,
+  "context_size": 8192,
+  "draft_depth": 2,
+  "record_video": false
+}

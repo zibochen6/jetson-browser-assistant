@@ -1,0 +1,22 @@
+{
+  "torch": {
+    "filename": "torch-2.7.0-cp310-cp310-linux_aarch64.whl",
+    "bytes": 266741529,
+    "sha256": "6eff643c0a7acda92734cc798338f733ff35c7df1a4434576f5ff7c66fc97319"
+  },
+  "browser": {
+    "filename": "chromium-linux-arm64-1248.zip",
+    "bytes": 199750508,
+    "sha256": "910a12fff6170202195f72ef3d353801c7063d301ab80b1f51b77d791fda60ce"
+  },
+  "llama_source": {
+    "filename": "llama-source-785322d.tar.gz",
+    "bytes": 38871549,
+    "sha256": "c77fdd044067e47fbbd8bc1bfde0992e630e93ce7dd1e546cafddd80ed85d84a"
+  },
+  "uv": {
+    "filename": "uv-0.13.6-py3-none-manylinux_2_28_aarch64.whl",
+    "bytes": 16527707,
+    "sha256": "2e9a99100abe4f99605366974c4f9fe27f236615e05de8e78c0f357e38f09f97"
+  }
+}

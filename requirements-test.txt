@@ -1,0 +1,9 @@
+# Model-free development/CI only. Production uses uv.lock on ARM64.
+pytest>=8,<9
+pytest-asyncio>=0.25,<2
+httpx==0.28.1
+rich>=13.9,<15
+pydantic>=2.10,<3
+fastapi==0.162.0
+uvicorn>=0.34,<1
+playwright==1.64.1

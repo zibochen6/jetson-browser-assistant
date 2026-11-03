@@ -1,0 +1,142 @@
+[
+  {
+    "request": "查询2026-11-06北京到广州的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "北京",
+      "destination": "广州",
+      "departure_date": "2026-11-06",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-07上海到成都的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "上海",
+      "destination": "成都",
+      "departure_date": "2026-11-07",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-08广州到杭州的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "广州",
+      "destination": "杭州",
+      "departure_date": "2026-11-08",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-09成都到北京的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "成都",
+      "destination": "北京",
+      "departure_date": "2026-11-09",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-10杭州到深圳的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "杭州",
+      "destination": "深圳",
+      "departure_date": "2026-11-10",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-11厦门到上海的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "厦门",
+      "destination": "上海",
+      "departure_date": "2026-11-11",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-12南京到广州的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "南京",
+      "destination": "广州",
+      "departure_date": "2026-11-12",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-14重庆到上海的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "重庆",
+      "destination": "上海",
+      "departure_date": "2026-11-14",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-15武汉到北京的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "武汉",
+      "destination": "北京",
+      "departure_date": "2026-11-15",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  },
+  {
+    "request": "查询2026-11-16西安到深圳的单程机票，1名成人，经济舱，优先直飞和低价，列出最多3个真实候选。",
+    "expected": {
+      "origin": "西安",
+      "destination": "深圳",
+      "departure_date": "2026-11-16",
+      "adults": 1,
+      "cabin": "economy",
+      "trip_type": "one_way",
+      "direct_only": false,
+      "direct_preferred": true,
+      "price_preferred": true
+    }
+  }
+]

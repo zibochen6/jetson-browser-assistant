@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Jetson · Live Flow</title>
+  <link rel="stylesheet" href="/visualizer/visualizer.css">
+  <script defer src="/visualizer/visualizer.js"></script>
+</head>
+<body>
+<main id="flow-app">
+  <header class="masthead">
+    <div><p class="eyebrow">JETSON ORIN NX · LOCAL INFERENCE</p><h1>Inside the browser assistant</h1></div>
+    <span id="connection" class="pill">Connecting</span>
+  </header>
+  <nav class="toolbar" aria-label="Display mode">
+    <div class="segmented"><button id="live" aria-pressed="true">Live</button><button id="replay" aria-pressed="false">Replay</button></div>
+    <label class="run-picker">Run <select id="runs" aria-label="Recorded task"><option value="">Waiting for a task</option></select></label>
+    <button id="follow" class="ghost" hidden>Follow live</button>
+  </nav>
+  <section class="task-summary" aria-label="Task summary">
+    <div class="task-heading"><span id="status" class="pill">Idle</span><span id="run-id" class="muted">No task selected</span></div>
+    <h2 id="route">Ready when you are.</h2>
+    <p id="requirements" class="muted">Enter a task in the terminal. Model loading and input waiting are excluded.</p>
+    <div class="metrics"><div><strong id="elapsed">0.0<span>s</span></strong><span id="elapsed-label">Task elapsed</span></div><div><strong id="actions">0</strong><span>Browser actions</span></div><div><strong id="decisions">0</strong><span>Laya decisions</span></div></div>
+  </section>
+  <section class="pipeline" aria-label="Recorded execution flow">
+    <div class="section-heading"><h2>Execution flow</h2><span class="muted" id="flow-caption">Waiting for real events</span></div>
+    <div id="graph" role="group" aria-label="Qwen parses the task, Laya chooses browser actions, and the program executes and verifies them">
+      <svg id="edges" aria-hidden="true"><defs><marker id="flow-arrow" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path class="arrow-head" d="M0 0 L8 4 L0 8 Z"/></marker></defs><g id="structure"></g><path id="event-edge"/></svg>
+      <div class="entry-row">
+        <div class="node qwen" data-stage="parse"><span class="owner">QWEN</span><strong>Parse request</strong><small>Not recorded</small></div>
+        <div class="node" data-stage="browser"><span class="owner">BROWSER TOOL</span><strong>Open browser</strong><small>Not recorded</small></div>
+      </div>
+      <div class="loop-label">OBSERVE → DECIDE → ACT → OBSERVE</div>
+      <div class="loop-grid">
+        <div class="node" data-stage="observe"><span class="owner">PAGE OBSERVER</span><strong>Observe page</strong><small>Not recorded</small></div>
+        <div class="node laya" data-stage="decide"><span class="owner">LAYA</span><strong>Choose action</strong><small>Not recorded</small></div>
+        <div class="node qwen" data-stage="text"><span class="owner">QWEN · IF NEEDED</span><strong>Input text</strong><small>Not recorded</small></div>
+        <div class="node wait" data-stage="wait"><span class="owner">WEBSITE WAIT</span><strong>Wait for change</strong><small>Not recorded</small></div>
+        <div class="node" data-stage="execute"><span class="owner">BROWSER TOOL</span><strong>Execute action</strong><small>Not recorded</small></div>
+        <div class="node" data-stage="validate"><span class="owner">EXECUTOR GUARD</span><strong>Validate action</strong><small>Not recorded</small></div>
+      </div>
+      <div class="optional-row">
+        <div class="node optional" data-stage="calendar" hidden><span class="owner">CALENDAR ADAPTER</span><strong>Select full date</strong><small>Not recorded</small></div>
+        <div class="node qwen optional" data-stage="recovery" hidden><span class="owner">QWEN · RECOVERY</span><strong>Recovery decision</strong><small>Not recorded</small></div>
+      </div>
+      <div class="finish-grid">
+        <div class="node" data-stage="verify"><span class="owner">PROGRAM VERIFIER</span><strong>Verify query</strong><small>Not recorded</small></div>
+        <div class="node wait" data-stage="results"><span class="owner">WEBSITE WAIT</span><strong>Load results</strong><small>Not recorded</small></div>
+        <div class="node" data-stage="sort"><span class="owner">PROGRAM VERIFIER</span><strong>Check price sort</strong><small>Not recorded</small></div>
+        <div class="node" data-stage="fare"><span class="owner">PROGRAM VERIFIER</span><strong>Verify fare options</strong><small>Not recorded</small></div>
+      </div>
+      <div class="node outcome" data-stage="done"><span class="owner">INDEPENDENT VERIFICATION</span><strong>Task outcome</strong><small>Not recorded</small></div>
+    </div>
+  </section>
+  <section class="current-action" aria-live="polite" aria-atomic="true">
+    <div class="section-heading"><span id="current-owner" class="eyebrow">CURRENT OPERATION</span><span id="operation-duration" class="muted">Not recorded</span></div>
+    <h2 id="current-message">Waiting for a task</h2>
+    <p id="selection" class="muted">Real model selections will appear here.</p>
+  </section>
+  <section id="playback" aria-label="Replay controls" hidden>
+    <div class="playback-row"><button id="play" class="primary">Play</button><label>Speed <select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label><span id="replay-time" class="muted">0.0 / 0.0 s</span></div>
+    <input id="timeline" type="range" min="0" max="1" step="0.01" value="0" aria-label="Replay position">
+    <p class="muted">Flow and event replay only. The website is not operated or replayed.</p>
+  </section>
+  <section class="verification" aria-label="Verification results"><span id="query-proof">Query: Not verified</span><span id="fare-proof">Fare options: Not verified</span><span id="sort-proof">Price sort: Not recorded</span></section>
+  <details id="decision-details"><summary>Decision details <span id="candidate-count" class="muted"></span></summary><p id="decision-goal" class="muted"></p><ul id="candidates"></ul><p class="muted">Offered actions and actual selections. No generated reasoning is shown.</p></details>
+  <section class="event-section"><div class="section-heading"><h2>Recent events</h2><span id="event-count" class="muted">0 events</span></div><ol id="events"></ol></section>
+  <footer>Models stay on the Jetson · Read-only display · No screen recording</footer>
+</main>
+</body>
+</html>
