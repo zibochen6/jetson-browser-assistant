@@ -38,4 +38,4 @@ The flow is served at `http://127.0.0.1:8790/visualizer`. Its GET-only data sour
 
 Source assets ship inside the Python package and require no frontend build tool. The presentation browser is managed independently under `runtime/visualizer-profile`; normal website state stays in `profile/`. Recorded task evidence stays in `runs/`.
 
-See [target-board validation](live-flow-validation.md) for real task results, lifecycle checks and memory observations.
+See [target-board validation](validation-summary.md) for real task results, lifecycle checks and memory observations.

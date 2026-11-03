@@ -206,4 +206,4 @@ Ambiguous/contradictory plans are rejected or request clarification. No guarante
 is made for arbitrary English or Chinese expressions, dense/overlapping/imported
 complex boards, user input during an active gesture, freehand, collaboration or
 voice control. Current acceptance and known failure examples are in
-[whiteboard-validation.md](whiteboard-validation.md).
+[whiteboard-validation.md](validation-summary.md).
