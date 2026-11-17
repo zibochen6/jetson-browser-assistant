@@ -26,13 +26,13 @@ def read(path):
 result = {
     'timestamp': datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),
     'machine': platform.machine(), 'python': platform.python_version(),
-    'model': read('/proc/device-tree/model'), 'l4t': read('/etc/nv_tegra_release'),
+    'model': read(os.environ.get('JETSON_DEVICE_MODEL_PATH', '/proc/device-tree/model')), 'l4t': read('/etc/nv_tegra_release'),
     'os': read('/etc/os-release'), 'cuda': command(['/usr/local/cuda-12.6/bin/nvcc', '--version']),
     'gpu': command(['nvidia-smi']), 'memory': command(['free', '-h']), 'disk': command(['df', '-h', '.']),
     'desktop': command(['loginctl', 'show-session', '1', '-p', 'Type', '-p', 'Active', '-p', 'Service']),
     'packages': {name: importlib.metadata.version(name) for name in ['torch', 'transformers', 'laya', 'playwright', 'fastapi']},
     'docker': shutil.which('docker'), 'ethernet_speed_mbps': read('/sys/class/net/enP8p1s0/speed'),
-    'deployment': 'native uv environments; Docker not required',
+    'deployment': 'Docker' if os.environ.get('JETSON_BROWSER_CONTAINER') == '1' else 'native uv environment',
 }
 assert result['machine'] == 'aarch64' and result['model'] and 'Orin NX' in result['model'], 'Not target Jetson'
 Path('evidence').mkdir(exist_ok=True)

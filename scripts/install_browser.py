@@ -1,13 +1,14 @@
 """Install the exact Playwright ARM64 browser archive downloaded on the deployment host."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import stat
 import zipfile
 
 root = Path(__file__).resolve().parents[1]
 archive = root / 'runtime/chromium-linux-arm64-1248.zip'
-destination = Path.home() / '.cache/ms-playwright/chromium-1248'
+destination = Path(os.environ.get('PLAYWRIGHT_BROWSERS_PATH', Path.home() / '.cache/ms-playwright')) / 'chromium-1248'
 destination.mkdir(parents=True, exist_ok=True)
 (root / 'evidence').mkdir(exist_ok=True)
 h = hashlib.sha256()

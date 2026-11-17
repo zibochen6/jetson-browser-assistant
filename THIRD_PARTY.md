@@ -18,3 +18,8 @@ Bundled frontend notices are in
 also remain in the local fonts directory. They are generated from the locked build.
 Model training dataset licenses are governed upstream; no training dataset is
 redistributed. Trip.com content, prices and access rules remain the website's.
+
+The optional Docker image installs PyTorch/Chromium and bundles the selected
+Laya/Qwen inference artifacts plus llama.cpp. Their installed/bundled license and
+third-party notices remain in the image. Source-repository distribution entries
+above describe the native installer, not the contents of the Docker image.
