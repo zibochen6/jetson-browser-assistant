@@ -6,6 +6,10 @@ browser or edit a whiteboard through mouse and keyboard input.
 [简体中文](README.zh-CN.md) · [Installation](docs/installation.md) ·
 [Usage](docs/usage.md) · [Troubleshooting](docs/troubleshooting.md)
 
+**Docker delivery:** the [complete-image guide](docs/docker.md) packages this
+application and both pinned models for the `laya-browser` case in jetson-examples.
+See that case's release manifest/validation for the Docker-specific test boundary.
+
 | Demo | What you can ask it to do | What it saves |
 | --- | --- | --- |
 | Flight assistant | Search Trip.com, verify the route/date, filter nonstop flights, sort by price and open fare options | Real candidates, query evidence, screenshots and per-task events |

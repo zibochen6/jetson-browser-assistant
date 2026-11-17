@@ -5,3 +5,7 @@ Licensed under the Apache License, Version 2.0. Third-party software and model
 artifacts retain their respective licenses and attribution. See THIRD_PARTY.md
 and the bundled whiteboard THIRD-PARTY-NOTICES.txt. This project does not grant
 rights to third-party trademarks or represent endorsement by their owners.
+Docker distribution includes the selected Laya browser checkpoint and
+Unsloth Qwen3.5-4B MTP GGUF, published under Apache-2.0. Their pinned sources
+are recorded in manifest-laya-browser.json and manifest-Qwen3.5-4B-MTP-GGUF.json.
+See LICENSE for Apache-2.0 terms and THIRD_PARTY.md for component notices.
