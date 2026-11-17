@@ -1,5 +1,5 @@
 # Build on an ARM64 Jetson. docker/prepare.py stages and verifies build inputs.
-ARG BASE_IMAGE=nvcr.io/nvidia/l4t-jetpack:r36.4.0
+ARG BASE_IMAGE=nvcr.io/nvidia/l4t-jetpack:r36.4.0@sha256:34ccf0f3b63c6da9eee45f2e79de9bf7fdf3beda9abfd72bbf285ae9d40bb673
 FROM ${BASE_IMAGE}
 ARG SOURCE_REVISION=unknown
 LABEL org.opencontainers.image.title="Jetson Browser Assistant" \
